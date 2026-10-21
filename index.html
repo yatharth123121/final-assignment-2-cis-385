@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UFV AI-Powered Smart Greenhouse | $100M Proposal</title>
+<style>
+:root{--bg:#f3f8f5;--sf:#fff;--ink:#12261d;--mute:#4d6358;--leaf:#1f6b4a;--grow:#b42a86;--line:#c9dcd3;--hero:#12261d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a14;--sf:#14261d;--ink:#e6f2ec;--mute:#9db4a8;--leaf:#5fc496;--grow:#ff7ac6;--line:#264236;--hero:#07110c}}
+:root[data-theme="dark"]{--bg:#0d1a14;--sf:#14261d;--ink:#e6f2ec;--mute:#9db4a8;--leaf:#5fc496;--grow:#ff7ac6;--line:#264236;--hero:#07110c}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Serif 4",Georgia,"Times New Roman",serif}
+h1,h2,h3,nav,button,th,.sans{font-family:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--leaf)}
+:focus-visible{outline:3px solid var(--grow);outline-offset:2px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--sf);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;padding:.55rem .8rem}
+nav a,nav button,.btn{background:none;border:1px solid transparent;color:var(--ink);padding:.4rem .8rem;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;cursor:pointer}
+nav a:hover,nav button:hover,.btn:hover{border-color:var(--grow)}
+nav a.on{background:var(--leaf);color:#fff}
+nav button{border-color:var(--line)}
+.btn{border-color:var(--line);background:var(--sf)}
+.btn.on{background:var(--grow);color:#fff;border-color:var(--grow)}
+.hero{background:var(--hero);color:#eaf5ef;padding:4.5rem 1.2rem 3.5rem;position:relative;overflow:hidden}
+.hero-art{position:absolute;inset:0;width:100%;height:100%}
+.wrap{max-width:1000px;margin:0 auto;position:relative}
+.hero h1{font-size:clamp(2.3rem,6.5vw,4.6rem);line-height:1.02;margin:0 0 1.1rem;font-weight:800;letter-spacing:-.02em;max-width:14ch}
+.hero p{max-width:58ch;font-size:1.12rem;color:#c3d9cd}
+.cta{display:inline-block;background:var(--grow);color:#fff;padding:.8rem 1.4rem;border-radius:4px;font-weight:700;text-decoration:none;font-family:"Barlow",system-ui,sans-serif;margin-right:.5rem}
+.cta.alt{background:transparent;border:1px solid #7fa896}
+.panel{margin-top:2.2rem;border:1px solid #2f5242;border-radius:6px;padding:1rem 1.2rem;background:#0b1a13}
+.panel h3{margin:0 0 .7rem;font-size:.92rem;color:#9ccdb5;font-weight:600}
+.reads{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem}
+.reads b{display:block;font-size:1.9rem;color:#fff;font-variant-numeric:tabular-nums;font-family:"Barlow",system-ui,sans-serif}
+.reads span{font-size:.82rem;color:#9ccdb5}
+.note{font-size:.8rem;color:#7fa896;margin:.7rem 0 0}
+section{padding:3.4rem 1.2rem;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1;margin:0 0 1rem;font-weight:800}
+h3{font-size:1.1rem;margin:1.2rem 0 .3rem}
+.lead{font-size:1.15rem;max-width:64ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:1.2rem}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem}
+.card h3{margin:0 0 .3rem}.card p{margin:0;color:var(--mute);font-size:.95rem}
+.kpi b{display:block;font-size:2.2rem;line-height:1;color:var(--leaf);font-family:"Barlow",system-ui,sans-serif}
+.kpi span{font-size:.9rem;color:var(--mute)}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}
+.detail{background:var(--sf);border:1px solid var(--line);border-left:4px solid var(--grow);border-radius:6px;padding:1rem 1.2rem;min-height:5.5rem}
+.detail h3{margin:0 0 .3rem}.detail p{margin:.2rem 0}
+.scroll{overflow-x:auto;max-width:100%}
+.gantt{min-width:740px;font-family:"Barlow",system-ui,sans-serif;font-size:.88rem}
+.gr{display:grid;grid-template-columns:230px 1fr;align-items:center;border-top:1px solid var(--line);padding:.3rem 0;transition:opacity .2s}
+.gr.dim{opacity:.2}
+.gr button{text-align:left;background:none;border:0;color:var(--ink);cursor:pointer;padding:.2rem .3rem;font-size:.88rem;border-radius:3px}
+.gr button.sel{background:var(--sf);outline:2px solid var(--leaf)}
+.bars{display:grid;grid-template-columns:repeat(48,1fr);background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/4))}
+.bars i{display:block;height:20px;border-radius:3px;background:var(--leaf)}
+.bars i.s2{background:#2b7fa3}.bars i.s3{background:var(--grow)}
+.bars em{font-style:normal;color:var(--grow);font-size:1.1rem;line-height:20px;margin-left:-.4rem}
+.yrs{display:grid;grid-template-columns:230px 1fr;font-weight:700}
+.yrs div:last-child{display:grid;grid-template-columns:repeat(48,1fr)}
+.yrs span{border-left:1px solid var(--line);padding-left:4px;color:var(--mute);font-size:.78rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;align-items:start}
+.donut{width:200px;height:200px;border-radius:50%;margin:0 auto;position:relative}
+.donut::after{content:"";position:absolute;inset:36px;background:var(--bg);border-radius:50%}
+.donut b{position:absolute;inset:0;display:grid;place-content:center;text-align:center;z-index:1;font-family:"Barlow",system-ui,sans-serif;font-size:1.3rem}
+.donut small{display:block;font-size:.72rem;color:var(--mute);font-weight:400}
+.sl{display:grid;grid-template-columns:1fr 4.5rem;gap:.1rem .6rem;font-size:.9rem;margin:.55rem 0;font-family:"Barlow",system-ui,sans-serif}
+.sl input{grid-column:1/3;width:100%;accent-color:var(--leaf)}
+.sl b{text-align:right}
+.warn{color:var(--grow);font-weight:700;font-family:"Barlow",system-ui,sans-serif}
+.meter{height:14px;background:var(--line);border-radius:7px;overflow:hidden;margin:.5rem 0}
+.meter div{height:100%;background:var(--leaf);width:0;transition:width .8s}
+.bar{display:grid;grid-template-columns:150px 1fr 3rem;gap:.6rem;align-items:center;font-size:.85rem;margin:.35rem 0;font-family:"Barlow",system-ui,sans-serif}
+.bar div{background:var(--line);border-radius:3px;height:14px}
+.bar div i{display:block;height:100%;background:var(--leaf);border-radius:3px;transition:width .8s}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sf)}
+details{background:var(--sf);border:1px solid var(--line);border-radius:6px;padding:.6rem 1rem;margin:.5rem 0}
+summary{cursor:pointer;font-weight:700;font-family:"Barlow",system-ui,sans-serif}
+details p{margin:.4rem 0 .2rem;color:var(--mute)}
+.todo{border:1px dashed var(--grow);padding:.6rem 1rem;border-radius:4px;font-size:.9rem;color:var(--mute);background:var(--sf)}
+ol.refs{padding-left:1.2rem;font-size:.9rem;color:var(--mute)}
+ol.refs li{margin:.45rem 0;overflow-wrap:anywhere}
+footer{padding:2rem 1.2rem;color:var(--mute);font-size:.9rem;text-align:center}
+svg text{font-family:"Barlow",system-ui,sans-serif}
+@media (max-width:560px){.bar{grid-template-columns:100px 1fr 2.5rem}}
+@media print{nav,.hero-art,.tabs,.sl input{display:none}.hero{background:#fff;color:#000}.hero p,.reads span{color:#333}.panel{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+<a href="#overview">Overview</a><a href="#video">Video</a><a href="#phases">Phases</a><a href="#arch">Architecture</a><a href="#timeline">Timeline</a><a href="#analytics">Analytics</a><a href="#people">Stakeholders &amp; Team</a><a href="#wbs">WBS</a><a href="#risk">Risk &amp; QA</a><a href="#sources">Sources</a>
+<button id="theme" type="button">Dark / Light</button><button id="print" type="button">Print / PDF</button>
+</nav>
+
+<header class="hero" id="overview">
+<svg class="hero-art" viewBox="0 0 1200 560" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="pl" viewBox="0 0 30 40"><path d="M15 40V18" stroke="#2f8f62" stroke-width="2" fill="none"/><path d="M15 26C5 24 3 14 6 8c8 1 11 8 9 18z" fill="#3fa874"/><path d="M15 22c9-1 13-9 11-16-8 0-12 6-11 16z" fill="#5fc496"/></symbol>
+<pattern id="row" width="46" height="40" patternUnits="userSpaceOnUse"><use href="#pl" x="8" width="30" height="40"/></pattern>
+<linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7ac6" stop-opacity=".45"/><stop offset="1" stop-color="#ff7ac6" stop-opacity="0"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset=".15" stop-color="#12261d" stop-opacity=".97"/><stop offset=".6" stop-color="#12261d" stop-opacity=".55"/><stop offset="1" stop-color="#12261d" stop-opacity=".1"/></linearGradient>
+</defs>
+<path d="M540 180L850 40L1160 180V520H540Z" stroke="#4b8a6e" stroke-width="2" fill="#0e2118" fill-opacity=".7"/>
+<path d="M600 180V520M660 180V520M720 180V520M780 180V520M840 180V520M900 180V520M960 180V520M1020 180V520M1080 180V520M540 180H1160M540 300H1160M540 410H1160M850 40V180" stroke="#3a7058" stroke-width="1.2" fill="none"/>
+<rect x="580" y="210" width="540" height="6" rx="3" fill="#ff7ac6"/><polygon points="580,216 1120,216 1160,300 540,300" fill="url(#cone)"/>
+<rect x="580" y="320" width="540" height="6" rx="3" fill="#ff7ac6"/><polygon points="580,326 1120,326 1160,410 540,410" fill="url(#cone)"/>
+<rect x="580" y="430" width="540" height="6" rx="3" fill="#ff7ac6"/><polygon points="580,436 1120,436 1160,520 540,520" fill="url(#cone)"/>
+<rect x="560" y="260" width="580" height="40" fill="url(#row)"/><rect x="540" y="300" width="620" height="5" fill="#4b8a6e"/>
+<rect x="560" y="370" width="580" height="40" fill="url(#row)"/><rect x="540" y="410" width="620" height="5" fill="#4b8a6e"/>
+<rect x="560" y="480" width="580" height="40" fill="url(#row)"/>
+<g stroke="#7fe0b5" stroke-width="1.5" fill="#7fe0b5" opacity=".85"><path d="M850 40L700 120L760 240M850 40L1000 110L980 250" fill="none" stroke-dasharray="5 5"/><circle cx="850" cy="40" r="6"/><circle cx="700" cy="120" r="5"/><circle cx="760" cy="240" r="5"/><circle cx="1000" cy="110" r="5"/><circle cx="980" cy="250" r="5"/></g>
+<rect width="1200" height="560" fill="url(#fade)"/>
+</svg>
+<div class="wrap">
+<h1>Where code meets crops.</h1>
+<p>We ask for $100,000,000 to transform an underused agricultural growing area at UFV into an automated living laboratory: IoT sensors, machine-learning climate models and computer-vision plant monitoring, built and run with CIS and agriculture students.</p>
+<p><a class="cta" href="#analytics">Explore the numbers</a><a class="cta alt" href="#timeline">See the timeline</a></p>
+<div class="panel" aria-label="Illustrative live sensor demo">
+<h3>Bay 3 sensor feed (simulated demo values)</h3>
+<div class="reads">
+<div><b id="t">22.4&deg;C</b><span>Air temperature</span></div>
+<div><b id="h">68%</b><span>Humidity</span></div>
+<div><b id="c">812</b><span>CO&#8322; (ppm)</span></div>
+<div><b id="s">41%</b><span>Soil moisture</span></div>
+</div>
+<p class="note">Numbers are simulated. They show the telemetry the real dashboard will stream over MQTT.</p>
+</div>
+</div>
+</header>
+
+<section id="problem"><div class="wrap">
+<h2>The opportunity</h2>
+<p class="lead">Without a unified system, monitoring and adjusting growing conditions takes more manual effort, and it is harder to use data consistently for research and teaching. The living lab brings computer science and sustainable agriculture together and gives UFV students practical experience with connected systems, machine learning and controlled-environment agriculture.</p>
+<div class="grid">
+<div class="card"><h3>Learning</h3><p>Coursework, research projects and theses for CIS, agriculture and biology students.</p></div>
+<div class="card"><h3>Sustainability</h3><p>Data-driven control aims to reduce energy and resource use. Benefits will be measured against a documented baseline.</p></div>
+<div class="card"><h3>Region</h3><p>Fraser Valley growers, co-operatives and agritech partners get a local testbed.</p></div>
+</div>
+<p class="todo" style="margin-top:1.2rem">Current-state challenges should be confirmed with UFV stakeholders before they are treated as established facts.</p>
+</div></section>
+
+<section id="video"><div class="wrap">
+<h2>Watch the pitch</h2>
+<div style="position:relative;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;border:1px solid var(--line)">
+<iframe src="https://www.youtube-nocookie.com/embed/8Wm0VygAdCs" title="UFV AI-Powered Smart Greenhouse video" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p class="note" style="color:var(--mute)">If the player does not load, <a href="https://youtu.be/8Wm0VygAdCs" target="_blank" rel="noopener">open the video on YouTube</a>.</p>
+</div></section>
+
+<section id="phases"><div class="wrap">
+<h2>Four phases to launch</h2>
+<div class="tabs" role="tablist" id="ptabs"></div>
+<div class="detail" id="pdetail" aria-live="polite"></div>
+<p><b>Method:</b> hybrid. Waterfall for civil construction, retrofit and structural changes, where safety and zoning approvals come first. Agile Scrum in two-week sprints for software, the dashboard and AI model testing.</p>
+</div></section>
+
+<section id="arch"><div class="wrap">
+<h2>Technical architecture</h2>
+<p class="lead">A multi-bay glass greenhouse with automated thermal curtains, hydroponic troughs and vertical racks. Edge gateways collect data and send it by MQTT to a secure UFV cloud database.</p>
+<svg viewBox="0 0 900 230" width="100%" role="img" aria-label="Data flow from sensors to edge gateway, MQTT, cloud database and React dashboard, with actuators controlled back">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--leaf)"/></marker></defs>
+<g fill="var(--sf)" stroke="var(--leaf)" stroke-width="2">
+<rect x="10" y="40" width="140" height="70" rx="8"/><rect x="190" y="40" width="140" height="70" rx="8"/><rect x="370" y="40" width="140" height="70" rx="8"/><rect x="550" y="40" width="140" height="70" rx="8"/><rect x="730" y="40" width="150" height="70" rx="8"/>
+<rect x="190" y="160" width="140" height="56" rx="8" stroke="var(--grow)"/>
+</g>
+<g fill="var(--ink)" font-size="14" text-anchor="middle" font-weight="700">
+<text x="80" y="70">Sensors</text><text x="260" y="70">Edge gateway</text><text x="440" y="70">MQTT</text><text x="620" y="70">Cloud database</text><text x="805" y="70">React dashboard</text><text x="260" y="192">Actuators</text></g>
+<g fill="var(--mute)" font-size="11" text-anchor="middle">
+<text x="80" y="90">temp, humidity, light</text><text x="80" y="102">CO&#8322;, soil moisture</text><text x="260" y="90">Raspberry Pi / Jetson</text><text x="440" y="90">messaging protocol</text><text x="620" y="90">secure, UFV-hosted</text><text x="805" y="90">monitor and override</text><text x="260" y="208">irrigation, vents, shading</text></g>
+<g stroke="var(--leaf)" stroke-width="2" fill="none" marker-end="url(#ar)"><path d="M150 75H186"/><path d="M330 75H366"/><path d="M510 75H546"/><path d="M690 75H726"/></g>
+<path d="M805 112V188H334" stroke="var(--grow)" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#ar)"/>
+<path d="M260 160V114" stroke="var(--grow)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+<text x="560" y="182" fill="var(--grow)" font-size="12" text-anchor="middle">authorized control commands</text>
+</svg>
+</div></section>
+
+<section id="timeline"><div class="wrap">
+<h2>Gantt chart: October 2026 to September 1, 2030</h2>
+<div class="tabs" id="gfilter"><button class="btn on" data-f="All">All</button><button class="btn" data-f="Foundation">Foundation</button><button class="btn" data-f="Software &amp; AI">Software &amp; AI</button><button class="btn" data-f="Launch">Launch</button></div>
+<div class="scroll"><div class="gantt" id="gantt"></div></div>
+<p class="sans" style="font-size:.85rem;color:var(--mute)">&#9670; Stage-gate reviews at the end of Phases 1 and 2. Click a row for details.</p>
+<div class="detail" id="gdetail" aria-live="polite"></div>
+</div></section>
+
+<section id="analytics"><div class="wrap">
+<h2>Project analytics</h2>
+<div class="grid">
+<div class="card kpi"><b>48</b><span>months, Oct 2026 to Sep 2030</span></div>
+<div class="card kpi"><b>8</b><span>milestones with named owners</span></div>
+<div class="card kpi"><b>2</b><span>stage-gate reviews</span></div>
+<div class="card kpi"><b>10%</b><span>contingency reserve ($10M)</span></div>
+</div>
+<h3>Countdown to launch</h3>
+<div class="card"><b class="sans" id="days" style="font-size:1.6rem">&hellip;</b> <span id="dsub" style="color:var(--mute)"></span>
+<div class="meter"><div id="prog"></div></div><span id="pl2" style="font-size:.85rem;color:var(--mute)"></span></div>
+<h3>Months per milestone</h3>
+<div id="dur"></div>
+<h3>Budget explorer</h3>
+<p>Drag the sliders to test allocations. The $10M reserve is fixed. Only the reserve comes from the proposal; the rest are draft figures to replace with the detailed cost baseline.</p>
+<div class="two">
+<div><div class="donut" id="donut"><b id="dtot">$100M<small>allocated</small></b></div><div id="dleg" class="sans" style="font-size:.85rem;margin-top:1rem"></div></div>
+<div><div id="sliders"></div><p id="bmsg" class="sans"></p><button class="btn" id="reset" type="button">Reset to draft</button></div>
+</div>
+</div></section>
+
+<section id="people"><div class="wrap">
+<h2>Stakeholders and team</h2>
+<div class="tabs" id="sfilter"><button class="btn on" data-s="all">All</button><button class="btn" data-s="Internal">Internal</button><button class="btn" data-s="External">External</button></div>
+<div class="grid" id="sgrid"></div>
+<h3>Group roles</h3>
+<table>
+<tr><th>Role</th><th>Member</th><th>Responsibility</th></tr>
+<tr><td>Project Manager</td><td>Gurkeerit Braich</td><td>Schedule, budget, risks, stakeholder communications; coordinates decisions with the sponsor.</td></tr>
+<tr><td>Lead Software/CIS Engineer</td><td>Yatharth Sharma</td><td>Database, cloud-data pipeline and management dashboard.</td></tr>
+<tr><td>Hardware and IoT Specialist</td><td>Jose Rodrigo Avila Castro</td><td>Sensor installation, wiring and actuator configuration.</td></tr>
+<tr><td>Agriculture and Data Research Lead</td><td>Seyed Jalali</td><td>Validates crop data, finds academic sources, checks agricultural standards.</td></tr>
+<tr><td>Risk, Quality and Compliance Lead</td><td>Seyed Jalali</td><td>Risk register, QA and test protocols, compliance checks, stage-gate readiness checklists, beta testing and sign-off (Milestone 7).</td></tr>
+</table>
+</div></section>
+
+<section id="wbs"><div class="wrap">
+<h2>Work breakdown, outputs and controls</h2>
+<details open><summary>WBS 1.0 Civil and Environmental Works</summary><p>Glass replacement, climate-control insulation, plumbing and electrical upgrades.</p></details>
+<details><summary>WBS 2.0 Hardware and IoT Acquisition</summary><p>Industrial-grade sensors, Arduino or ESP32 controllers, automated valves and LED grow lights.</p></details>
+<details><summary>WBS 3.0 Software Development</summary><p>Data-ingestion pipeline, cloud infrastructure, AI prediction models and a student-facing analytics web application.</p></details>
+<details><summary>WBS 4.0 Governance and Operations</summary><p>Safety and regulatory reviews, training manuals, curriculum integration and partnership agreements.</p></details>
+<details><summary>Key documents</summary><p>Scope baseline, risk register, software architecture blueprint, procurement records and system test protocols.</p></details>
+<details><summary>Cost and change control</summary><p>A $10 million contingency covers supply-chain inflation, equipment overruns and other approved risks. Scope changes and budget reallocations need a formal change request, approved by the sponsor and relevant UFV or grant authorities. Stage-gate reviews at the end of Phases 1 and 2 assess deliverables, risks, budget and readiness before the next phase or funding tranche is released.</p></details>
+</div></section>
+
+<section id="risk"><div class="wrap">
+<h2>Risk management and quality assurance</h2>
+<p>Led by the Risk, Quality and Compliance Lead. Ratings are initial estimates, reviewed at each stage gate.</p>
+<div style="overflow-x:auto"><table>
+<tr><th>ID</th><th>Risk</th><th>Likelihood / Impact</th><th>Mitigation</th><th>Owner</th></tr>
+<tr><td>R1</td><td>Supply-chain delays or inflation for sensors, actuators, glazing</td><td>High / High</td><td>Order long-lead items early, two qualified suppliers, $10M contingency via change control</td><td>Project Manager</td></tr>
+<tr><td>R2</td><td>Scope creep across four phases</td><td>Medium / High</td><td>Scope baseline, formal change requests, sponsor sign-off</td><td>Project Manager</td></tr>
+<tr><td>R3</td><td>Cybersecurity weakness in IoT devices, MQTT or dashboard overrides</td><td>Medium / High</td><td>TLS-encrypted MQTT, per-device credentials, network segmentation, role-based overrides, patching</td><td>Lead Software/CIS Engineer</td></tr>
+<tr><td>R4</td><td>Sensor drift or failure feeding bad data to ML models</td><td>Medium / Medium</td><td>Calibration schedule, redundant sensors, automated anomaly checks</td><td>Hardware and IoT Specialist</td></tr>
+<tr><td>R5</td><td>ML models underperform or lack training data</td><td>Medium / High</td><td>Collect baseline data from Phase 1, rule-based fallback, held-out validation</td><td>Lead Software/CIS Engineer</td></tr>
+<tr><td>R6</td><td>Automation fault harms crops</td><td>Low / High</td><td>Fail-safe defaults, manual override, alarms, tested rollback</td><td>Hardware and IoT Specialist</td></tr>
+<tr><td>R7</td><td>Safety, zoning or regulatory approvals delay construction</td><td>Medium / High</td><td>Start approvals in Milestone 1; make approvals Waterfall gate criteria</td><td>Project Manager</td></tr>
+<tr><td>R8</td><td>Knowledge loss from student turnover</td><td>High / Medium</td><td>Maintained documentation, handover checklists, training manuals</td><td>Risk, Quality and Compliance Lead</td></tr>
+</table></div>
+<h3>Quality assurance plan</h3>
+<details open><summary>Phase 1: IoT</summary><p>Acceptance test for every sensor and actuator, calibration records, and a baseline data-collection period so benefit claims can be checked against measured values.</p></details>
+<details><summary>Phase 2: ML and digital twin</summary><p>Validate each model on held-out data, compare with the rule-based baseline, and record accuracy, water and energy use before automated control goes live.</p></details>
+<details><summary>Phase 3: computer vision</summary><p>Evaluate detection on a labelled image set (precision and recall), with human review of flagged plants.</p></details>
+<details><summary>Milestone 7: beta testing and sign-off</summary><p>User acceptance testing, security review of MQTT and dashboard layers, failure-mode tests (power, network, sensor loss) and a signed test report.</p></details>
+<details><summary>Compliance checks (to confirm with UFV)</summary><p>Building, electrical and safety approvals before Milestone 2; UFV policy and BC privacy law for user accounts; grant reporting per tranche; food-safety rules if crops are sold in Phase 4.</p></details>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<h2>Research and references</h2>
+<p>The project draws on controlled-environment agriculture work in British Columbia, including the B.C. Centre for Agritech Innovation at SFU and UFV&rsquo;s BioPod infrastructure. Research suggests data-driven controlled-environment agriculture can help reduce water and energy use and improve yield consistency; the project will evaluate this against a documented baseline.</p>
+<ol class="refs">
+<li>B.C. Centre for Agritech Innovation. (2025). <i>Industry project guidelines and 50/50 shared-risk agritech validation frameworks.</i> Simon Fraser University. <a href="https://www.sfu.ca/bccai.html">https://www.sfu.ca/bccai.html</a></li>
+<li>Despommier, D. (2020). <i>The vertical farm: Feeding the world in the 21st century.</i> Thomas Dunne Books.</li>
+<li>Gao, F., Fu, L., Zhang, Y., &amp; Li, R. (2024). Multi-sensor data fusion and machine learning for automated climate control in controlled-environment agriculture. <i>Journal of Sustainable Agriculture, 16</i>(24), 10958. <a href="https://ideas.repec.org/a/gam/jsusta/v16y2024i24p10958-d1543409.html">link</a></li>
+<li>Government of British Columbia. (2026). <i>B.C. expands support for regional agritech innovation and sustainable food systems</i> (Release No. 2026JEG0003-000030). <a href="https://news.gov.bc.ca/releases/2026JEG0003-000030">link</a></li>
+<li>Kour, R., &amp; Arora, S. (2025). IoT-enabled smart greenhouses: Architecture, protocols, and security challenges in precision farming. <i>International Journal of Sensor Networks and Data Communications, 14</i>(1), 45-58. <a href="https://reference-global.com/2/v2/download/article/10.2478/ijssis-2025-0005.pdf">link</a></li>
+<li>National Institute of Food and Agriculture. (2025). <i>Advancing controlled environment agriculture through data-driven decision-making and workforce development</i> (Project No. 1029246). U.S. Department of Agriculture. <a href="https://portal.nifa.usda.gov/web/crisprojectpages/1029246-advancea-advancing-controlled-environment-agriculture-through-data-driven-decision-making-and-workforce-development.html">link</a></li>
+<li>Penn State University. (2023). New computer vision system can guide specialty crops monitoring. <i>Penn State News.</i> <a href="https://www.psu.edu/news/research/story/new-computer-vision-system-can-guide-specialty-crops-monitoring">link</a></li>
+<li>Smith, J. A., &amp; van der Meer, E. (2024). Digital twins in modern horticulture: Simulating climate dynamics for energy optimization. <i>Agricultural Systems, 212</i>, 103742. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12526782/">link</a></li>
+<li>University of the Fraser Valley. (2019). <i>FIT project descriptions: BioPod advanced lighting and climate control initiatives.</i> UFV Provost Office. <a href="https://www.ufv.ca/provost/fit/2019-2020-fit-project-descriptions/">link</a></li>
+<li>University of the Fraser Valley Food and Agriculture Institute. (2023). <i>Controlled-environment agriculture training framework for undergraduate students.</i> UFV FAI Publications.</li>
+<li>Wageningen University &amp; Research. (2025). <i>Agros II: Next steps towards autonomous greenhouse operations and plant-driven control.</i> WUR Plant Research. <a href="https://www.wur.nl/en/research/plant/agros-ii-next-steps-towards-autonomous-greenhouse">link</a></li>
+</ol>
+</div></section>
+
+<footer>Gurkeerit Braich &middot; Yatharth Sharma &middot; Jose Rodrigo Avila Castro &middot; Seyed Jalali<br>CIS Project Management &middot; Professor Kevin Ronso &middot; UFV AI-Powered Smart Greenhouse &middot; Deadline September 1, 2030</footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+/* theme + print */
+$('#theme').onclick=function(){var r=document.documentElement,d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);r.setAttribute('data-theme',d?'light':'dark')};
+$('#print').onclick=function(){try{window.print()}catch(e){}};
+/* active nav */
+var links=$$('nav a'),secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});secs.forEach(function(s){if(s)io.observe(s)})}
+/* phases */
+var P=[['Phase 1','2026\u20132027','Infrastructure and IoT instrumentation','Retrofit the existing growing bays with multi-parameter sensor arrays for temperature, humidity, light, CO\u2082 and soil moisture. Install automated actuators for irrigation, ventilation and shading. Establish secure cloud-data pipelines that stream live telemetry to a central UFV dashboard.'],
+['Phase 2','2027\u20132028','Machine learning and digital twin','Develop ML models that optimise irrigation schedules and adjust climate conditions, and simulate \u201cwhat-if\u201d growth scenarios in a digital twin.'],
+['Phase 3','2028\u20132029','Computer vision and disease detection','Integrate high-resolution imaging and computer vision to spot plant stress, nutrient deficiencies and potential disease early.'],
+['Phase 4','Sep 2029\u2013Sep 2030','Commercialization, student incubation and launch','Engage agritech partners, student start-up teams and regional growers. Conclude with the official facility launch on September 1, 2030.']];
+var pt=$('#ptabs');
+P.forEach(function(p,i){var b=document.createElement('button');b.className='btn';b.type='button';b.setAttribute('role','tab');b.textContent=p[0];b.onclick=function(){showP(i)};pt.appendChild(b)});
+function showP(i){$$('#ptabs .btn').forEach(function(b,j){b.classList.toggle('on',i===j)});var p=P[i];$('#pdetail').innerHTML='<h3>'+p[0]+' ('+p[1]+'): '+p[2]+'</h3><p>'+p[3]+'</p>'}
+showP(0);
+/* gantt */
+var M=[['Feasibility and stakeholder alignment',0,6,'Project Manager / Lead Architect','Foundation','Oct 2026','Mar 2027'],
+['Civil retrofit and structural zoning',6,9,'Infrastructure Lead','Foundation','Apr 2027','Dec 2027'],
+['IoT sensor and actuator deployment',15,8,'Systems Integration Engineer','Foundation','Jan 2028','Aug 2028'],
+['Cloud data pipeline and core dashboard',23,8,'CIS Lead Software Developer','Software & AI','Sep 2028','Apr 2029'],
+['AI/ML engine and digital twin build',31,8,'Data Science and AI Specialist','Software & AI','May 2029','Dec 2029'],
+['Computer vision and disease detection',39,5,'Computer Vision Researcher','Software & AI','Jan 2030','May 2030'],
+['Beta testing, auditing and sign-off',44,3,'Quality Assurance Lead','Launch','Jun 2030','Aug 2030'],
+['Official grand opening',47,1,'Entire Project Team','Launch','Sep 1, 2030','Sep 1, 2030']];
+var cls={'Foundation':'','Software & AI':'s2','Launch':'s3'};
+var g='<div class="yrs"><div></div><div><span style="grid-column:span 3">Q4 2026</span><span style="grid-column:span 12">2027</span><span style="grid-column:span 12">2028</span><span style="grid-column:span 12">2029</span><span style="grid-column:span 9">2030</span></div></div>';
+M.forEach(function(m,i){g+='<div class="gr" data-g="'+m[4]+'"><button type="button" data-i="'+i+'">'+(i+1)+'. '+m[0]+'</button><div class="bars"><i class="'+cls[m[4]]+'" style="grid-column:'+(m[1]+1)+'/span '+m[2]+'"></i></div></div>'});
+g+='<div class="gr"><div style="padding-left:.3rem">Stage gates</div><div class="bars"><em style="grid-column:15">&#9670;</em><em style="grid-column:27">&#9670;</em></div></div>';
+$('#gantt').innerHTML=g;
+function showG(i){var m=M[i];$$('.gr button').forEach(function(b){b.classList.toggle('sel',+b.dataset.i===i)});$('#gdetail').innerHTML='<h3>'+(i+1)+'. '+m[0]+'</h3><p><b>Dates:</b> '+m[5]+' to '+m[6]+' ('+m[2]+' month'+(m[2]>1?'s':'')+')</p><p><b>Owner:</b> '+m[3]+'</p><p><b>Group:</b> '+m[4]+'</p>'}
+$$('.gr button').forEach(function(b){b.onclick=function(){showG(+b.dataset.i)}});showG(0);
+$$('#gfilter .btn').forEach(function(b){b.onclick=function(){$$('#gfilter .btn').forEach(function(x){x.classList.toggle('on',x===b)});$$('.gr[data-g]').forEach(function(r){r.classList.toggle('dim',b.dataset.f!=='All'&&r.dataset.g!==b.dataset.f)})}});
+/* durations */
+$('#dur').innerHTML=M.map(function(m,i){return '<div class="bar"><span>'+(i+1)+'. '+m[0].split(' ').slice(0,2).join(' ')+'</span><div><i style="width:0" data-w="'+(m[2]/9*100)+'"></i></div><b>'+m[2]+'</b></div>'}).join('');
+setTimeout(function(){$$('#dur i').forEach(function(i){i.style.width=i.dataset.w+'%'})},300);
+/* countdown */
+var s=new Date(2026,9,1),e=new Date(2030,8,1),n=new Date(),d=Math.max(0,Math.ceil((e-n)/864e5)),p=Math.min(100,Math.max(0,(n-s)/(e-s)*100));
+$('#days').textContent=d.toLocaleString()+' days';$('#dsub').textContent='until the September 1, 2030 launch';
+$('#pl2').textContent=p.toFixed(1)+'% of the project window has elapsed (Oct 2026 start)';setTimeout(function(){$('#prog').style.width=p+'%'},300);
+/* budget */
+var C=[['Civil and environmental (WBS 1.0)',28,'#1f6b4a'],['Hardware and IoT (WBS 2.0)',22,'#2b7fa3'],['Software, cloud, AI (WBS 3.0)',20,'#5a4fa8'],['Governance and operations (WBS 4.0)',12,'#8a6a1c'],['Student incubation and partnerships',8,'#6b7a73']];
+var v=C.map(function(c){return c[1]});
+$('#sliders').innerHTML=C.map(function(c,i){return '<div class="sl"><label for="sl'+i+'">'+c[0]+'</label><b id="sv'+i+'"></b><input id="sl'+i+'" type="range" min="0" max="50" value="'+c[1]+'"></div>'}).join('');
+function draw(){var sum=v.reduce(function(a,b){return a+b},0),free=90-sum,st=0,parts=[];
+v.forEach(function(x,i){parts.push(C[i][2]+' '+st+'% '+(st+x)+'%');st+=x;$('#sv'+i).textContent='$'+x+'M'});
+parts.push('#b42a86 '+st+'% '+(st+10)+'%');st+=10;if(st<100)parts.push('#c9dcd3 '+st+'% 100%');
+$('#donut').style.background='conic-gradient('+parts.join(',')+')';
+$('#dtot').innerHTML='$'+(sum+10)+'M<small>of $100M</small>';
+$('#bmsg').className='sans'+(free<0?' warn':'');
+$('#bmsg').textContent=free<0?'Over budget by $'+(-free)+'M. Reduce an allocation.':free===0?'Fully allocated: $90M plus the $10M reserve.':'Unallocated: $'+free+'M.';
+$('#dleg').innerHTML=C.map(function(c,i){return '<div><span style="display:inline-block;width:.7rem;height:.7rem;background:'+c[2]+';margin-right:.4rem"></span>'+c[0]+'</div>'}).join('')+'<div><span style="display:inline-block;width:.7rem;height:.7rem;background:#b42a86;margin-right:.4rem"></span>Contingency reserve</div>'}
+C.forEach(function(c,i){$('#sl'+i).oninput=function(){v[i]=+this.value;draw()}});
+$('#reset').onclick=function(){C.forEach(function(c,i){v[i]=c[1];$('#sl'+i).value=c[1]});draw()};draw();
+/* stakeholders */
+var S=[['Students','Internal','CIS, agriculture and biology students use the lab for coursework, projects and theses.'],['Faculty and research staff','Internal','Research and teaching use of the facility.'],['Facility employees and operators','Internal','Facility managers, data engineers and student lab assistants run day-to-day operations.'],['Project sponsor','Internal','Strategic oversight; approves major financial and scope decisions under UFV policy and grant rules.'],['Federal and provincial government','External','Funding agencies expecting accountable public benefit.'],['Fraser Valley farmers and co-ops','External','Local growers and agricultural co-operatives who can test and learn from the lab.'],['Agritech and sustainability organizations','External','Partners supporting sustainable agritech initiatives.']];
+function drawS(f){$('#sgrid').innerHTML=S.filter(function(x){return f==='all'||x[1]===f}).map(function(x){return '<div class="card"><h3>'+x[0]+'</h3><p>'+x[2]+'</p></div>'}).join('')}
+drawS('all');$$('#sfilter .btn').forEach(function(b){b.onclick=function(){$$('#sfilter .btn').forEach(function(x){x.classList.toggle('on',x===b)});drawS(b.dataset.s)}});
+/* sensor demo */
+if(!(matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){var a={t:22.4,h:68,c:812,s:41};function j(x,k,lo,hi){return Math.min(hi,Math.max(lo,x+(Math.random()-.5)*k))}
+setInterval(function(){a.t=j(a.t,.4,20,26);a.h=j(a.h,1.2,60,75);a.c=j(a.c,18,700,950);a.s=j(a.s,.8,35,50);
+$('#t').textContent=a.t.toFixed(1)+'\u00b0C';$('#h').textContent=Math.round(a.h)+'%';$('#c').textContent=Math.round(a.c);$('#s').textContent=Math.round(a.s)+'%'},1800)}
+})();
+</script>
+</body>
+</html>
